@@ -1,0 +1,62 @@
+import React from "react";
+
+const Preview = props => {
+  let nameStyle = {
+    color: "Orange",
+    fontSize: "1.5rem",
+    paddingLeft: "1rem"
+  };
+  let designationStyle = {
+    color: "grey",
+    fontSize: "0.8rem",
+    paddingLeft: "1rem"
+  };
+  let companyStyle = {
+    color: "grey",
+    fontSize: "1rem",
+    fontWeight: "bold",
+    paddingLeft: "1rem"
+  };
+  let contactStyle = {
+    fontSize: "1rem",
+    paddingLeft: "1rem",
+    paddingTop: "0px"
+  };
+  let contactLabelStyle = {
+    color: "Orange",
+    fontSize: "1rem",
+    paddingTop: "0px"
+  };
+  let tableStyle = {
+    borderLeft: "3px solid Orange",
+    paddingLeft: "1rem"
+  };
+
+  return (
+    <div className="shadow p-4 ">
+      <table className="table table-borderless table-sm" style={tableStyle}>
+        <tbody>
+          <tr>
+            <td style={nameStyle}>{props.value.Name}</td>
+          </tr>
+          <tr>
+            <td style={designationStyle}>{props.value.Designation}</td>
+          </tr>
+          <tr>
+            <td style={companyStyle}>{props.value.Company}</td>
+          </tr>
+          <tr>
+            <td style={contactStyle}>
+              {props.value.Contact !== "" ? (
+                <span style={contactLabelStyle}>m : </span>
+              ) : null}
+              {props.value.Contact !== "" ? props.value.Contact : null}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default Preview;
