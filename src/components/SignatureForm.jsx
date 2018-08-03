@@ -3,25 +3,27 @@ import Input from "../utils/input-elements/Input";
 
 class SignatureForm extends Component {
   state = {
-      data: {
-          Name: "",
-          Designation: "",
-          Company: "",
-          Contact: ""
-      }
+    data: {
+      Name: "",
+      Designation: "",
+      Company: "",
+      Contact: "",
+      SelectTemplate: "default"
+    }
   };
 
-handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state.data);
-}
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   console.log(this.state.data);
+  // };
 
-handleChange = (e) => {
-    let info = {...this.state.data};
+  handleChange = e => {
+    let info = { ...this.state.data };
     info[e.currentTarget.name] = e.currentTarget.value;
-    this.setState({data: info});
+    this.setState({ data: info });
     this.props.onDataUpdate(info);
-  }
+  };
+
 
   render() {
     return (
@@ -33,7 +35,7 @@ handleChange = (e) => {
             id="name"
             name="Name"
             value={this.state.Name}
-            onChange = {this.handleChange}
+            onChange={this.handleChange}
             placeholder="eg: Jhon Doe"
           />
           <Input
@@ -42,7 +44,7 @@ handleChange = (e) => {
             id="designation"
             name="Designation"
             value={this.state.Designation}
-            onChange = {this.handleChange}
+            onChange={this.handleChange}
             placeholder="eg: Sr. Programmer"
           />
           <Input
@@ -51,7 +53,7 @@ handleChange = (e) => {
             id="company"
             name="Company"
             value={this.state.Company}
-            onChange = {this.handleChange}
+            onChange={this.handleChange}
             placeholder="eg: Star Trek Industries"
           />
           <Input
@@ -60,12 +62,21 @@ handleChange = (e) => {
             id="contact"
             name="Contact"
             value={this.state.Contact}
-            onChange = {this.handleChange}
+            onChange={this.handleChange}
             placeholder="eg: +8801XXXXXXXXX"
           />
-          <button type="submit" className="btn btn-primary">
+          {/* <button type="submit" className="btn btn-primary">
             Submit
-          </button>
+          </button> */}
+          <select
+            name="SelectTemplate"
+            value={this.state.SelectTemplate}
+            onChange={this.handleChange}
+          >
+            <option value="default">default design</option>
+            <option value="first">first design</option>
+            <option value="second">second Design</option>
+          </select>
         </form>
       </div>
     );

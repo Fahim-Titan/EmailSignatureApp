@@ -9,7 +9,8 @@ class Signature extends Component {
         Name: "",
         Designation: "",
         Company: "",
-        Contact: ""
+        Contact: "",
+        SelectTemplate: "default"
       }
   };
 
