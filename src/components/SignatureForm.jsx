@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Input from "../utils/input-elements/Input";
+import data from './signature-templates/DesignList';
+
 
 class SignatureForm extends Component {
   state = {
@@ -24,6 +26,13 @@ class SignatureForm extends Component {
     this.props.onDataUpdate(info);
   };
 
+  renderOption = () => {
+    let opt=[];
+    data.forEach(element => {
+      opt.push(<option key={element.name} value={element.name}>{element.title}</option>);
+    })
+    return opt;
+  };
 
   render() {
     return (
@@ -68,7 +77,7 @@ class SignatureForm extends Component {
           {/* <button type="submit" className="btn btn-primary">
             Submit
           </button> */}
-          <select
+          {/* <select
             name="SelectTemplate"
             value={this.state.SelectTemplate}
             onChange={this.handleChange}
@@ -76,6 +85,15 @@ class SignatureForm extends Component {
             <option value="default">default design</option>
             <option value="first">first design</option>
             <option value="second">second Design</option>
+          </select> */}
+
+          <select
+            name="SelectTemplate"
+            value={this.state.SelectTemplate}
+            onChange={this.handleChange}
+          >
+          {this.renderOption()}
+
           </select>
         </form>
       </div>

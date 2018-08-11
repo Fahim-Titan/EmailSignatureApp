@@ -1,8 +1,8 @@
 import React from "react";
 
-const ImageLeftTemplate = props => {
+const AllBlueTemplate = props => {
   let nameStyle = {
-    color: "Orange",
+    color: "Blue",
     fontSize: "1.5rem",
     paddingLeft: "1rem"
   };
@@ -23,12 +23,12 @@ const ImageLeftTemplate = props => {
     paddingTop: "0px"
   };
   let contactLabelStyle = {
-    color: "Orange",
+    color: "Blue",
     fontSize: "1rem",
     paddingTop: "0px"
   };
   let tableStyle = {
-    borderLeft: "3px solid Orange",
+    borderLeft: "3px solid Blue",
     paddingLeft: "1rem"
   };
 
@@ -37,7 +37,7 @@ const ImageLeftTemplate = props => {
       <table className="table table-borderless table-sm" style={tableStyle}>
         <tbody>
           <tr>
-            <td style={nameStyle}>{props.value.Name} ulal ladlsf</td>
+            <td style={nameStyle}>{props.value.Name}</td>
           </tr>
           <tr>
             <td style={designationStyle}>{props.value.Designation}</td>
@@ -59,4 +59,4 @@ const ImageLeftTemplate = props => {
   );
 };
 
-export default ImageLeftTemplate;
+export default AllBlueTemplate;

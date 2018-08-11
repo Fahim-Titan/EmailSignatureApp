@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DefaultTemplate from "./signature-templates/DefaultTemplate";
-import ImageLeftTemplate from "./signature-templates/ImageLeftTemplate";
+import AllBlueTemplate from "./signature-templates/AllBlueTemplate";
+// import Data from './signature-templates/DesignList';
 
 class Preview extends Component {
   state = {
@@ -9,14 +10,26 @@ class Preview extends Component {
 
   renderTemplate = props => {
     if(props.value.SelectTemplate === "default")    return <DefaultTemplate value={this.props.value} />;
-    if(props.value.SelectTemplate === "first")    return <ImageLeftTemplate value={this.props.value} />;
+    if(props.value.SelectTemplate === "allblue")    return <AllBlueTemplate value={this.props.value} />;
   };
 
+  // ---- not working ----
 
+  // renderTemplate = props => {
+  //   let design;
+  //   Data.forEach(element => {
+  //     if(props.value.SelectTemplate === element.name){
+  //       design =  <element.component value={this.props.value} />;
+  //     }
+  //   });
+  //   return design;
+  // };
+
+
+  
   render() {
     return (
       <div className="shadow p-4 ">
-        {/* <DefaultTemplate value={this.props.value} /> */}
         {this.renderTemplate(this.props)}
       </div>
     );
